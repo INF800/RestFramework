@@ -98,3 +98,54 @@ class DataSerializer(serializers.ModelSerializer):
 ```
 
 **vii. What you need to display**
+
+In app's view, Request API and get json back
+
+*senddata/views.py*:
+```
+#custom imports
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import response
+from rest_framework import status
+from . models import Data
+from . serializers import DataSerializer
+
+class DataList(APIView):
+	"""
+	# GET returns all data in model, Data
+	# POST creates new data in model, Data
+	"""
+	
+	def get(self, request):
+		Data1 = Data.objects.all()  # store all instances or objects
+		serializer = DataSerializer(Data1, many=True) # convt to many JSON objects
+		return Response(serializer.data) # return JSON
+	
+	def post(self):
+		pass
+```
+
+Link everything
+
+*responseapi/urls.py*:
+```
+...
+
+#custom imports
+from rest_framework.urlpatterns import format_suffix_patterns
+from senddata import views
+
+urlpatterns = [
+	...
+	
+	url(r'^getdata/', views.DataList.as_view()),
+]
+```
+
+**All Set!**
+
+goto: `/getdata/`. 
+
+You can try with GET request in postman as well
