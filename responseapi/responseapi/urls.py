@@ -20,6 +20,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from senddata import views
 
 urlpatterns = [
+		path('', admin.site.urls),
     path('admin/', admin.site.urls),
     path('getdata/', views.DataList.as_view()),
 ]
