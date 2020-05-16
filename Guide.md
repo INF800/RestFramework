@@ -140,8 +140,9 @@ from senddata import views
 
 urlpatterns = [
 	...
+	#regular expressed. may not be necessary 
 	
-	url(r'^getdata/', views.DataList.as_view()),
+	path(r'^getdata/', views.DataList.as_view()),
 ]
 ```
 
