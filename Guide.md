@@ -83,7 +83,8 @@ In `senddata` app dir, create `serializers.py`
 
 *senddata/serializers.py*:
 ```
-from rest_framework import serializers, Data
+from rest_framework import serializers
+from . models import Data
 
 class DataSerializer(serializers.ModelSerializer):
 	
@@ -99,7 +100,7 @@ class DataSerializer(serializers.ModelSerializer):
 
 **vii. What you need to display**
 
-In app's view, Request API and get json back
+In app's view, Request an API and get json back
 
 *senddata/views.py*:
 ```
@@ -107,7 +108,7 @@ In app's view, Request API and get json back
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
-from rest_framework.response import response
+from rest_framework.response import Response
 from rest_framework import status
 from . models import Data
 from . serializers import DataSerializer
