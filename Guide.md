@@ -53,6 +53,7 @@ class Data(models.Model):
 Migrate your table
 ```
 python manage.py makemigrations
+python manage.py migrate
 ```
 
 **v. Add/delete data from admin pannel**
