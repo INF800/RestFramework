@@ -154,3 +154,40 @@ urlpatterns = [
 goto: `/getdata/`. 
 
 You can try with GET request in postman as well
+
+### 03. For POST request
+
+ In same DataList(APIView) class,
+```
+def post(self, request):
+		serializer = DataSerializer(data=request.data)
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+```
+
+goto `/getdata/` and in the form below, add json data to update database
+```
+{
+	"data1": "test entering",
+	"data2": 100
+}
+// only single entry is allowed but can be POSTED multiple times
+```
+or use
+```
+$ curl -i -X POST -H 'Content-Type: application/json' -d '{"data1": "terminal", "data2": 77}' http://localhost:8000/getdata/
+```
+Or add this to ANY html file
+```
+<html>
+	<body>
+		<form action="http://localhost:8000/getdata/" method="post">
+  		<input type="text" name="data1" value="form1" />
+  		<input type="number" name="data2" value="0" />
+  		<input type="submit" />
+</form>
+	</body>
+</html>
+```
