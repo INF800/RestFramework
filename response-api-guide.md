@@ -1,4 +1,4 @@
-(Official Docs are amazing)[https://www.django-rest-framework.org/tutorial/quickstart/#project-setup]
+(Official Docs are amazing. See class based APIViews)[https://www.django-rest-framework.org/tutorial/quickstart/#project-setup]
 
 #### 01. Packages Needed
 
@@ -46,7 +46,7 @@ class Data(models.Model):
 	data1 = models.CharField(max_length=10)
 	data2 = models.IntegerField()
 	
-	def __str__(self):
+	def __str__(self): #for admin panel display name
 		return self.data1
 ```
 

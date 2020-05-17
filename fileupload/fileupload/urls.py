@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+		path('', admin.site.urls), #for main landing page
     path('admin/', admin.site.urls),
     # added 2 of 3
     path('file/', include('uploadapp.urls')),
