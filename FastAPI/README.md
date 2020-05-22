@@ -4,4 +4,5 @@ django
 uvicorn
 ```
 
-- Run using `uvicorn filename:appname` use `--reload` in develppment mode
+- Run using `uvicorn filename:appname` use `--reload` in develppment mode.
+- 
