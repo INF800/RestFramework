@@ -9,4 +9,4 @@ uvicorn
 
 # Related
 
-- [Stock Screener explained throroughly and hosted in heroku](https://github.com/rakesh4real/fastapi-stock-screener)
+- [Stock Screener explained thoroughly and hosted in heroku](https://github.com/rakesh4real/fastapi-stock-screener)
