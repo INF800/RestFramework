@@ -1,11 +1,5 @@
-- pip requirements
-```
-django
-uvicorn
-```
-
-- Run using `uvicorn filename:appname` use `--reload` in develppment mode.
-
+### Run with Docker
+Refer [this template repo](https://github.com/rakesh4real/fastapi-template) 
 
 # Related
 
